@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: index-webpage
+data:
+  index.html: |
+    <html>
+      <head>
+        <title>My Team13 Web Page</title>
+      </head>
+      <body>
+        <h1>Welcome to My Simple Webpage!</h1>
+      </body>
+    </html>
