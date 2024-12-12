@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: index-webpage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: index-webpage
+  template:
+    metadata:
+      labels:
+        app: index-webpage
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: html-volume
+          configMap:
+            name: index-webpage
